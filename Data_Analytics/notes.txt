@@ -1,0 +1,68 @@
+Introduction to DS:
+    What is DS? 
+    Applications of DS
+    
+Why DS?
+
+Types of Analytics:
+    -predictive
+    -prescriptive
+    -diagnostic
+    -descriptive
+    
+What is bias?
+
+types of bias:
+    1. people bias
+        -anchoring bias
+        -availability bias eg:
+        -exclusion bias eg: titanic
+        -conformation bias eg: bpl
+        -loss aversion bias eg: market production
+    2. sample bias eg: sample dataset
+    3. measurement bias eg: face recog (filters the images)
+    4. alogrithmic bias eg: model depends on algo
+    
+Types of variables:
+
+numerical variables
+    -discrete eg: 1,2,3
+    -continous eg: conti
+    
+categorical
+    -binary : eg: 0 or 1 eg2: true or false
+    -nominal- multiple categories eg: embarke
+    -ordinal- when relation b/w vars  eg: feedbacks or grades etc.
+
+Intro to python:
+	1. variables
+	2. dt
+	3.collections
+		-list
+		-tupl
+		-dict
+	4. iterations
+		-for
+			-with conditions
+		-while
+	5. funcs
+	6. user defined func(lambda)
+
+Intro to numpy:
+	1. array
+	2. vector
+	3. mat
+	4. basic operations (matmul etc..)
+	5. selection & indexing
+
+Intro  to pandas:
+	1. series
+	2.df
+	3. basic operation(groupby etc)
+	4. read csv, write etc
+	5. selection & indexing
+    6. apply user defined funcs over cols
+       
+wingspan:
+    1. intro to ds
+    2. python for ds
