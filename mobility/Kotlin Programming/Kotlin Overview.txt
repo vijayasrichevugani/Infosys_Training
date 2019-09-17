@@ -1,0 +1,45 @@
+--Basics
+	--History of Kotlin
+	--Variables
+		--var (mutable reference)
+		--val (immutable reference)
+	--Datatype
+	--Arrays
+	--Conditional Statement
+		--if-else, when
+	--Range operator
+		--(doouble dot operator) 1..10
+	--Loops
+		--while, do-while, for (for-each)
+	--Functions
+	--String Interpolation
+--OOP
+	--Classes
+	--Constructor
+	--Inheritance
+	--Access modifier
+	--Override  (open keyword in parent, override keyword in Child)
+	--Data Class
+	--Abstract Class
+	--Interface
+
+--Object Extension - Static Functionality
+--Object Declaration - Singleton class
+--Object Expression - Anonymous Class
+
+--Higher Order Function
+	--Lambda function
+	--'it' keyword in Lambda
+	--Closures
+	--Extension Function
+
+Collection
+	--List
+	--Map
+	--Set
+	--Types
+		--Immutable
+		--Mutable
+	--filter function
+	--all, any, count, find
+

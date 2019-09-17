@@ -1,0 +1,126 @@
+   Android and iOS
+
+Native Approach:
+
+Android
+     Programming Language : Java or Kotlin
+    IDE:Android Studio
+   installabe: apk
+
+
+iOS
+
+    Programming Language :  Objective C or Swift
+    IDE:xCode
+   installabe: ipa
+
+Challanges:
+Time to market very high and costly
+Advatage:
+  100% device feature access
+   look and feel(UI) and graphics
+
+Cross /Hybrid(common lanaguage and IDE, apps can created for Android and iOS)
+
+
+a.Cordova Phonegap(Wrapper tool)
+      Programming Language :  HTML,CSS and JavaScript
+    IDE:Eclipse
+   installabe: apk or ipa
+
+b.Xamarin
+
+   Programming Language :  C#
+    IDE:Visual Studio
+
+3.Mobile Web approach :
+    HTML5,CSS3,JS,JQUERY.....
+   hosted in Web Sever
+  
+
+
+Android Architecture
+
+
+
+Android Platform:
+
+
+       
+         Key apps
+             Calculator,Contacts.......
+         Middleware
+             a.Application Framework(inbuilt API's written in java)
+                      NotificationManager,SMSManager,NetworkManager..........
+             b.Native Libraries(written C)
+                    SQLite,Webkit,FreeType,OPenGL...........
+              c.ART
+                   provides runtime environment for the apps 
+        
+          OS(contains drivers which interacts with device hardware Camera driver,Keypad driver,....)
+
+
+
+Excecution:
+
+     1.compiler   (compiles all the .kt files to .class files)
+      2.dexer(dx) (converts all .class files to a single . dex file)
+      3.ART(.dex + Resources + AndroidManifest/xml)  ->> .apk
+
+
+
+1 screen = 1 Activity(.java or .kt) + 1 layout(.xml)
+
+  layout acts as a container  for placing the UI elements
+  a.LinearLayout
+  b.TableLayout
+  c.ConstraintLayout.....
+
+UI elements or Views or Widgers:  
+
+  Button
+  Checkbox
+  RadioButton
+  TextView
+  EditText
+  ListView
+  RecyclerView........................
+
+
+
+Project
+
+      app
+           manifets
+           java
+           res
+
+     Gradle Scripts(build tool)
+
+
+sdd
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

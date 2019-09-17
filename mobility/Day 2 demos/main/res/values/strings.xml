@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">HSBC</string>
+    <string name="mybutton1">Click</string>
+    <string name="t2">Welcome....</string>
+    <string name="ed1">Enter Name...</string>
+    <string name="ed2">Enter Password...</string>
+    <string-array name="country">
+        <item>China</item>
+        <item>India</item>
+        <item>USA</item>
+        <item>UK</item>
+        <item>USA</item>
+        <item>UK</item>
+        <item>Srilanka</item>
+        <item>USA</item>
+        <item>UK</item>
+        <item>Nepal</item>
+    </string-array>
+</resources>
