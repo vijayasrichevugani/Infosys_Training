@@ -1,0 +1,28 @@
+STEP 1: Create a bucket with object publicly accessible 
+gsutil cp gs://cloud-training/gcpnet/cdn/cdn.png gs://[your-storage-bucket]
+gsutil acl ch -u AllUsers:R gs://[your-storage-bucket]/cdn.png
+
+STEP 2: Create a HTTP Load balancer with CDN enabled 
+Start configuration 
+Configure Back end with backend bucket in previous step 
+Ignore host and path rules 
+Create front end , enabling HTTP protocol with ephemeral IP for now 
+Make a note of LB IP address 
+
+STEP 3: TIME HTTP REQUEST AND VERIFY CACHING TIMINGS
+export LB_IP_ADDRESS=<Enter the IP address of the Load Balancer>
+for i in {1..3};do curl -s -w "%{time_total}\n" -o /dev/null http://$LB_IP_ADDRESS/cdn.png; done
+
+STEP 4: Explore Logs 
+Filter for logs 
+Expand first http request(cachelookup) and jsonpayload (statusDetails: "response_sent_by_backend")
+No cachehit in first http request 
+
+Expand subsequent request logs 
+httpRequest: {
+  cacheHit: true   
+  cacheLookup: true 
+jsonPayload: {
+  @type: "type.googleapis.com/google.cloud.loadbalancing.type.LoadBalancerLogEntry"   
+  statusDetails: "response_from_cache" 
+

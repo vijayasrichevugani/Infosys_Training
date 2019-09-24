@@ -1,0 +1,187 @@
+Stackdriver
+Monitoring and management for services, containers, applications, and infrastructure.
+
+https://cloud.google.com/stackdriver/
+
+MONITORING
+LOGGING
+
+ERROR REPORTING
+
+TRACINNG
+
+DEBUGGING
+
+ALTERING
+
+PROFILING
+
+Stackdriver Monitoring
+https://cloud.google.com/monitoring/
+
+
+References:
+---------------------------
+METRICS:
+Measurement of some attribute
+EG: CPU UTLIZATION
+
+https://cloud.google.com/monitoring/api/metrics
+
+TIME SERIES:
+https://cloud.google.com/monitoring/api/v3/metrics#time_series
+
+Monitoring filters:
+https://cloud.google.com/monitoring/charts/metrics-selector#filter-option
+
+Grouping:
+https://cloud.google.com/monitoring/charts/metrics-selector#groupby-option
+
+Aggregation:
+https://cloud.google.com/monitoring/charts/metrics-selector#aggregation-options
+
+
+Aligner:
+https://cloud.google.com/monitoring/charts/metrics-selector#alignment
+
+
+Pricing:
+https://cloud.google.com/stackdriver/pricing
+
+========================
+
+DEMO:
+
+1. create resources:
+GCS bucket
+hsbc-products
+Regional
+us-central1
+
+hsbc-customers
+Regional
+us-east1
+
+-------------------------
+hsbc-products-instance
+us-central
+
+hsbc-customers-instance
+us-east1
+
+-------------------------
+
+2. SET UP MONITORING
+Stackdriver-> Monitoring
+
+Left tab: Resources->Metrics Explorer
+Choose resource
+GCS bucket
+Metric: Log entries
+
+Metric: Object Count
+
+Filter: location-> us-east1
+Aligner-> max
+(max no. of logs)
+
+Click-> SAVE chart
+
+---------------------
+Resource-> GCE VM instance
+Metric: CPU Utlization
+Filter -> Zone->us-central1-a
+
+Graph type - Stacker Bar
+View Options-> Outliner mode
+
+-------------------
+
+3. Dasboards->
+hsbc-dashboard
+
+----------------------
+Demo:
+Installing Stackdriver monitoring Agent 
+
+https://cloud.google.com/monitoring/agent/install-agent
+
+Go to VMs-> SSH
+curl -sSO https://dl.google.com/cloudagents/install-monitoring-agent.sh
+sudo bash install-monitoring-agent.sh
+
+Go to Stackdriver-> Monitoring
+
+Left tab: Resources->Metrics Explorer
+resource- GCE instances
+More metrics available ( as part of agent.googleapis.com)
+CPU load (1 min) ;
+ 
+
+
+============================
+
+Demo: Uptime Check
+Monitoring Agent Uptime
+
+HSBC-Vm-instance-CPU-utilization
+Check Type-> TCP
+Resource type-> Instance
+Applies to Single -> hsbc-customer-instance
+Port-> 22
+
+Create New Alerting Policy 
+hsbc-vm-instance-cpu-utilization are above a threshold of 1 for greater than 1 minute
+
+Notifications-> 
+Email-> amandeep_kaur09@infosys.com
+
+Policy-> UptimpolicyHSBCinstance
+
+SAVE
+
+Go to instances-> Stop the instance
+You will get email- alert
+
+
+=========================
+OPEN source monitoring system that complements Stackdriver for GKE:
+https://prometheus.io/
+
+=============================
+
+LAB: Stackdriver: Qwik Start
+
+==========================
+
+Stackdriver Logging
+LOGGING
+https://cloud.google.com/logging/
+
+Logs and Log entries:
+https://cloud.google.com/logging/docs/basic-concepts
+
+=============================
+
+Demo:
+Enable Stackdriver API
+Create VM instances and GCS buckets
+ 
+In the Stackdriver left-hand menu, click Logging to see the Logs Viewer.
+
+Select GCE VM Instance > lamp-1-vm in the first drop-down menu.
+Select syslog in the second drop-down menu, and click OK.
+Click the Start streaming logs icon.(Play button)
+
+
+
+
+
+
+
+
+
+
+Installing the Stackdriver Logging agent
+
+https://cloud.google.com/logging/docs/agent/installation

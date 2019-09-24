@@ -1,0 +1,204 @@
+Market place + deployment manager 
+Demo 
+ 
+ Kahoot quiz 
+ 1 Qlab 
+ 
+ **********
+ hands on  1:10-3:00
+ juniper session 3:30-4:30 
+ 
+ 
+ Deployment Manager[ Infra as a code]  + along Market place 
+ 
+ Day 1 : IAM( users, googlegroups,service account, gsuite identity domain)
+ Storage - GCS, Persistent disks 
+ Day 2 : Compute  - VM, GCE, GKE, GAE, Cloud functions
+ Load balancing, Auto scaling,health checks
+ Day 3 : Networking -  VPC, subnets, , hybrid connectivity(interconnect, VPN, peering)
+ Cloud DNS , CDN - bucket - caching 
+ Day 4 : Databases - 
+ OLTP 
+ relational - cloud sql, spanner 
+ nosql- bT(low latency rendering , frequent updates) - GEE , datastore/firestore
+ OLAP - Bigquery 
+ caching - Memory store 
+ 
+ Stack driver - monitoring(alerts, uptime checks) , logging, debugging, error reporting, trace , profiler 
+ 
+ interact with GCP :
+ 1. Console - GUI 
+ 2. CLI - cloud shell 
+ 3. SDK - install 
+ 
+ deployment manager - GCP 
+ Cloud formation - AWS 
+ Multi cloud - Terraform 
+ 
+ Anthos - GKE on prem solution  - https://cloud.google.com/anthos/
+ Apigee  - Multi cloud API platform   - https://cloud.google.com/apigee/
+ Dialogflow  - https://dialogflow.com/
+ Tensorflow  - https://www.tensorflow.org/
+ kubernetes - https://kubernetes.io/
+ 
+ 
+ Cloud native terminologies 
+ 1. Microservices - k8s, cloud functions , gae 
+ 2. Devops   - gae, 
+ 3. Containers  - k8s , google container registry 
+ 4. CICD  - Tools section of GCP 
+ 
+ Blogging 
+ MEdium 
+ CMS - content management systems 
+ 
+ wordpress  - LAMP stack 
+ drupal 
+ joomla 
+ sharepoint 
+ 
+ stackdriver - monitoring agent.sh logging agent.sh 
+ 
+ Linux - apache, mysql, php, java, ..... 
+ 
+ 
+ deployment manager - 
+ jinja /yaml  - Yet another mark up language 
+ 
+ json 
+ 
+ 
+ NAT  - Network address translator - similar to secretary of our private subnet resources 
+ 
+ Game - offline 
+ private subnet instances - not have internet access -> NAT - jump server 
+ 
+ Celebrity 
+ 
+ codelabs  - https://codelabs.developers.google.com/
+ filter - cloud 
+ Deploy Your Infrastructure Using Deployment Manager
+ 
+ Batch 1 – Ramanujan
+https://infosystechnologies.sharepoint.com/sites/Filesharing/Lists/HSBC_2019_Deepdive_Cloud_Feedback_Batch_1/overview.aspx
+
+
+ramesh_rajini@infosys.com
+amandeep_kaur09@infosys.com
+sthiti_pragnya@infosys.com
+
+
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 

@@ -1,0 +1,178 @@
+Deep dive session notes 3 
+Networking 
+
+Paramaters			Employees								Networking
+Account 			Offerletter								account on GCP 
+Access				campus 									default network 
+VPC Network 		        Building 							   Custom /Auto 
+Public 				pantry,canteen,reception				Public subnet(internet access)
+Private 			ODC - specific to account				private sub								
+Resources 			employee who work 					vms, buckets, apps... 
+
+https://gcp.solutions/
+
+VPC 
+- subnets
+- Firewalls 
+- ingress - incoming -Inbound 
+- Egress - Outgoing - Outbound 
+
+VPC Peering  network1 <-> NEtwork2 
+
+HYBRID Connectivity 
+
+HSBC India - HSBC US 
+Produc - Developments 
+
+1. Interconnect 
+
+Dedicated lan cable  your DC -> GCP Dc 
+similar to connecting your lan cable to laptop 
+
+
+2. VPN - IP sec tunneling 
+corporate network - home network 
+request initiated -> home network - encprytioon -> corporate network 
+
+3. Peering 
+
+DNS  - DNS 
+
+CDN  - Content Delivery Network  - low latency[ delay]  rendering 
+
+Example - Pizza 
+One Head office  - Region
+Many Zonal office  - Zones 
+Many branches in country  - Edge locations 
+Many branches withing city - Points of presence 
+
+Requests  for LB - 
+- Static - Cloud storage bucket 
+- Dynamic  - VMs behind load balancer 
+
+
+HTTP load balancer -> 2 VMS as backend 
+
+Load balancing 
+- Internet facing 
+- Internal 
+
+34.102.181.248
+
+
+for i in {1..30};
+do 
+curl -s -w "%{time_total}\n" -o /dev/null http://$LB_IP_ADDRESS/cdn.png; 
+done
+
+# - s -> silent 
+# -w - > write 
+
+Cache parameters 
+cache lookup 
+cache hit 
+
+***********
+DB options 
+SQL - structured query language 
+Banking transactions - tabular - row and columns 
+
+
+Relational  DB - 
+	MySQL, PostgreSQL ,SQL lite ,MariaDB - Open source
+	Oracle ,  Aurora(AWS), MS SQL server.. Proprietary  - licensing cost 
+	
+NoSQL - Not only SQL 
+	MongoDB, Cassandra , Hbase, couch db.. 
+
+GCP 
+OLTP - Transactional
+RElational - Cloud SQL, Cloud Spanner 
+NoSQL - Datastore[ Firestore ], Bigtable 
+
+OLAP - Analytical  - PB scaleof data 
+- Big Query 
+
+caching  - Memorystore 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+		
+

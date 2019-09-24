@@ -1,0 +1,27 @@
+VPCs are isolated networks within which you place your resources
+A VPC has a range of IP address.
+
+Any communication between resources in one VPC to a resource in another VPC happens over internet. This makes the data vulnerable. 
+
+
+VPC Network Peering enables you to peer VPC networks so that workloads in different VPC networks can communicate as if they below to a single network. 
+The communication happens over the private IP address space
+
+Traffic stays within Google's network and doesn't traverse the public internet.
+
+Mostly used in cases where you have administrative resources running in a VPC which peers with multiple other VPCs for administration purpose, auditing, finance, security etc. 
+
+
+VPC Network Peering gives you several advantages over using external IP addresses or VPNs to connect networks, including:
+
+Network Latency: Public IP networking suffers higher latency than private networking. All peering traffic stays within Google's network.
+    
+Network Security: Service owners do not need to have their services exposed to the public Internet and deal with its associated risks.
+    
+Network Cost: GCP charges egress bandwidth pricing for networks using external IPs to communicate even if the traffic is within the same zone. If however, the networks are peered they can use internal IPs to communicate and save on those egress costs. Regular network pricing still applies to all traffic.
+
+
+Certain restrictions are there:
+
+-A subnet CIDR range in one peered VPC network cannot overlap with a static route in another peered network.
+-Only directly peered networks can communicate. Transitive peering is not supported. 

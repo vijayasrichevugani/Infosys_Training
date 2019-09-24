@@ -1,0 +1,105 @@
+Security in Cloud
+-----------------
+
+Security is one of the top priorities in cloud and cloud vendors take special care in ensuring security.
+But Is Cloud Security just the responsibility of the Cloud vendors alone? No --> Both users and customers are responsible for the security
+
+Security is the shared responsibility of both GCP and Users
+
+In Cloud, security is applied at different levels - security should be applied for infrastructure which includes data centers and the physical access to data center, appliance security , network security, security of data in transit, data at rest, application security, security of the code, Security of various cloud based resources etc. 
+
+Google Cloud offers security at all these levels. The primary entry point to GCP Resources and services within your google cloud account is nothing but Google cloud console.
+
+Here we will discuss about securing and controlling access to GCP resources and services though Google Cloud Console. THe service which helps in creating and managing user access to GCP resources is called as Cloud Identity and Access Management or Cloud IAM.  
+
+
+
+Cloud IAM
+---------
+
+- lets you manage access control by defining <who> (identity) has <what> access (role) for <which> resource.
+- lets you adopt the security principle of least privilege, so you grant only the necessary access to your resources.
+
+<Who> - can be Google account, Service account(Applications) , Google group, G Suite domain, Cloud Identity domain, Federated Users etc. 
+	1. Google account - Example: username@gmail.com
+		- A Google account represents a developer, an administrator, or any other person who interacts with GCP. 
+		- Any email address that is associated with a Google account can be an identity, including gmail.com or other domains.
+        2. Service Account - Example: 12345890@cloudservicesgserviceaccount.com
+		- A service account is an account that belongs to your application instead of an individual end user. 
+		- When you run code that is hosted on GCP, you specify the account that the code should run as.
+		- You can create as many service accounts as needed to represent the different logical components of your application.
+	3. Google group - Example: Ggroup1@googlegroups.com
+		- A Google group is a named collection of Google accounts and service accounts.
+		- Every group has a unique email address that is associated with the group.
+		- are a convenient way to apply an access policy to a collection of users. 
+		- easily add members to and remove members from a Google group
+	4. GSuite Domain eg: jithin_mankad@infosys.com
+		- allows users to associate their gmail accounts or external domain identities 
+		- federation to external identities (internet domains such as hsbc.com, infosys.com etc.)
+		- virtual group of all the Google accounts that have been created in an organization's G Suite account.
+	5. Cloud Identities - jithin_mankad@infosys.com
+		- similar to gsuite domain identities
+		- Cloud Identity domain users don't have access to G Suite applications and features
+		- 
+<What>
+
+<Which>
+
+Concepts related to Cloud IAM
+------------------------------
+
+When an authenticated member attempts to access a resource/GCP service, Cloud IAM checks the resource's permissions to determine whether the action is authorized or not.
+
+entities and concepts involved in the authorization process
+------------------------------------------------------------
+1. Resources
+	- examples of resources are projects, Compute Engine instances, and Cloud Storage buckets.
+	- any virtual components that are created within google cloud are named as resources
+2. Permissions
+	- Permissions determine what operations are allowed on a resource. 
+	- permissions are usually represented in the form of <service>.<resource>.<verb>, 
+	- Example:  pubsub.subscriptions.consume, compute.instances.delete, appengine.instances.list etc.
+	- every GCP resources has its own REST APIs which need to be triggered to initiate any actions
+	- Any user/application who need to trigger those APIs need to be given permissions to even trigger the actions.
+3. Roles 
+	- A role is a collection of permissions
+	- You cannot assign a permission to the user directly; instead you grant them a role
+	- When you grant a role to a user, you grant them all the permissions that the role contains
+	Show image: https://cloud.google.com/iam/img/roles.png 
+	- There are three kinds of roles in Cloud IAM:
+	    Primitive roles: 
+		- The roles historically available in the GCP across all accountss
+		- These are the Owner, Editor, and Viewer roles.
+
+    	    Predefined roles: 
+		- give finer-grained access control than the primitive roles
+		- Example, the predefined role Pub/Sub Publisher (roles/pubsub.publisher) provides access to only publish messages to a Cloud Pub/Sub topic.
+
+    	    Custom roles: 
+		- that you create to tailor permissions to the needs of your organization 
+		- mostly when predefined roles don't meet your needs or you require granular permissions
+4. Policies
+	- grant permissions
+	- collection of statments that define who has what type of access
+	- is attached to a resource and is used to enforce access control whenever that resource is accessed
+
+
+Show image: https://cloud.google.com/iam/img/policy-hierarchy.png 
+	- You can set a Cloud IAM policy at any level in the resource hierarchy: the organization level, the folder level, the project level, or the resource level. Resources inherit the policies of the parent resource. If you set a policy at the organization level, it is automatically inherited by all its children projects, and if you set a policy at the project level, it's inherited by all its child resources. The effective policy for a resource is the union of the policy set at that resource and the policy inherited from higher up in the hierarchy.
+	- This policy inheritance is transitive ie. policies at org level are inherited by folders and inturn inherited by projects and inturn inherited by resource and so on and so forth.. 
+	- Very imp point: Child policies cannot restrict access granted at a higher level. For example, if you grant the Editor role to a user for a project, and grant the Viewer role to the same user for a child resource, then the user still has the Editor role grant for the child resource.
+
+Demo
+----
+
+
+Lab
+---
+https://www.qwiklabs.com/focuses/551?catalog_rank=%7B%22rank%22%3A1%2C%22num_filters%22%3A4%2C%22has_search%22%3Atrue%7D&parent=catalog&search_id=2879323
+
+
+Kahoot: 
+
+GCP is responsible for security ___ the cloud and Users are responsible for security __ cloud
+
+

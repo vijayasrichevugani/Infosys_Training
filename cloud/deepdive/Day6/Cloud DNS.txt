@@ -1,0 +1,30 @@
+DNS is a hierarchical distributed database that lets you store IP addresses and other data, and look them up by name. 
+
+Example: DNS translates requests for domain names like www.google.com into IP addresses like 74.125.29.101.
+
+
+General DNS Overview 
+--------------------
+
+DNS is a hierarchical distributed database that stores IP addresses and other data and allows queries by name.
+
+In other words, DNS is a directory of easily readable domain names that translate to numeric IP addresses used by computers to communicate with each other. 
+
+For example, when you type a URL into a browser, DNS converts the URL into an IP address of a web server associated with that name. 
+
+The DNS directories are stored and distributed around the world on domain name servers that are updated regularly.
+
+A DNS server stores a database of domain names and processes domain names based on DNS queries that come from a client in a network.
+
+
+
+Google Cloud DNS is a scalable, reliable, and managed authoritative Domain Name System (DNS) service running on the same infrastructure as Google. 
+It has low latency, high availability and is a cost-effective way to make your applications and services available to your users. 
+
+Cloud  
+
+Cloud DNS is programmable. You can easily publish and manage millions of DNS zones and records using our simple user interface, command-line interface or API.
+
+Demo: https://www.youtube.com/watch?v=eXtqqofrhOo
+
+

@@ -1,0 +1,17 @@
+Google Cloud Functions is a <serverless> execution environment for building and connecting cloud services
+
+With Cloud Functions you write simple, <single-purpose> functions that are <attached to events> emitted from your cloud infrastructure and services
+
+Your Cloud Function is <triggered when an event being watched is fired> 
+
+Your code executes in a <fully managed environment>
+
+There is <no need to provision any infrastructure> or worry about managing any server
+
+First up is serverless 
+	- and this is term that you should be familiar now. This word is directly linked with other words in bold i.e. code executes in a fully managed environment and no need to provision any infrastructure. This is exactly what we would expect or have come to expect from a Serverless offering.
+
+single-purpose functions : The unit of work that is expected from the developer is what we know as functions in any programming language. All you need to write are short snippets of code in any language that is current supported by the FaaS provider.
+
+attached to events emitted from your cloud infrastructure and services and triggered when an event being watched is fired: 
+	How is your function going to be triggered or executed? There is always a way to directly invoke your function but the interesting cases come in when they are invoked indirectly or in asynchronous fashion. So for e.g. what if you had to send an email when a file is uploaded to Google Cloud Storage. In this event, the event is a file upload to Google Cloud Storage. In summary, you define and configure your function that it will be triggered on file upload to Google Cloud Storage. Now, when a user uploads a file to that bucket, the event is fired and since your function registered to be triggered when that event occurs, Google Cloud Functions will invoke your function and pass the details of the event (file uploaded, id, time, date, etc) as a parameter to your function. This way you get information on that event and can do your processing.

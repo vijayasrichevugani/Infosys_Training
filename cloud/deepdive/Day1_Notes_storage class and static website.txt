@@ -1,0 +1,143 @@
+https://cloud.google.com/docs/
+
+Blogs for latest info:
+https://cloud.google.com/blog/
+https://cloud.google.com/blog/topics/google-cloud-next
+
+===========================================
+
+IAM:
+https://cloud.google.com/iam/docs/
+
+Project -
+name  - editable 
+id  - editable at the time creation 
+number - Google given 
+
+Orga - cIS, DNA, ADM, ETA 
+https://cloud.google.com/resource-manager/docs/cloud-platform-resource-hierarchy
+IAM 
+- users /members 
+ - gmail id - active 
+ - google groups  - outside GCP 
+ - gsuite domain /cloud identity domain - AD 
+ - service account  - GCP services has to talk to each other 
+
+
+GCS:
+https://cloud.google.com/storage/docs/
+
+3 ways of encrption
+Google Managed keys
+Customer Managed keys 
+Customer supplied keys 
+-----------------------------------------------
+Storage Classes:
+https://cloud.google.com/storage/docs/storage-classes
+
+storage classes 
+hot storage 
+	Multi regional
+	regional
+cold storage
+	nearline - min 30 days ,  once in a month
+	cold line  - min 90 days , once in a year 
+
+
+storage cost
+retrievel cost
+
+
+Demo:
+Changing the default storage class of a bucket
+https://cloud.google.com/storage/docs/changing-default-storage-class
+
+Changing object storage classes:
+https://cloud.google.com/storage/docs/changing-storage-classes
+
+gsutil rewrite -s [STORAGE_CLASS] gs://[PATH_TO_OBJECT]
+
+https://cloud.google.com/storage/docs/gsutil
+
+gsutil rewrite -s nearline gs://amandocs/photos/container
+
+
+-----------------------------------------------
+Object Lifecycle Management:
+https://cloud.google.com/storage/docs/lifecycle
+Demo:
+https://cloud.google.com/storage/docs/managing-lifecycles#enable
+
+
+=====================================
+Review:
+
+
+
+AnalyzeMan company needs to analyze its data  once in a year. Which of the Storage classes is best suited for them from GCP Product?	
+
+SuperBank wants its  user’s daily uploads of KYC documents to be viewed and processed within the same day end. Super Bank has spread its branches across Geo locaitons. Which of the Storage classes is best suited for them?
+
+
+
+
+=========================
+
+
+
+STATIC WEBSITE:
+https://cloud.google.com/storage/docs/hosting-static-website
+https://cloud.google.com/solutions/web-serving-overview#static-site
+
+1. Create Bucket
+2. Upload static website
+3. Public Access
+
+4. Register your domain name:
+https://my.freenom.com/clientarea.php
+
+5. Google DNS verification:
+https://www.google.com/webmasters/tools/
+
+6. DNS management
+https://my.freenom.com/clientarea.php
+
+TXT record (google-site-verification=2qXEIYR5vJ0kDGHBb5nNhQffrJqCSrSp-E8DPIR_cgw)
+CNAME record (c.storage.googleapis.com)
+
+7. Website-URL:
+https://storage.googleapis.com/hsbc-app/bootstrap-restaurant/index.html
+
+
+ DOMAIN ANME/CANNONCIAL NAME
+
+public dns ec2...region...
+
+8. Website Configuration:
+Assigning specialty pages
+Index pages
+An index page (also called a webserver directory index) is a file served to visitors when they request a URL that doesn't have an associated file. 
+Error page
+The error page is the file returned to visitors of your static site who request a URL that does not correspond to an existing file. 
+
+------------------------
+
+References:
+Example:
+https://little418.com/2015/07/jekyll-google-cloud-storage.html
+https://geekflare.com/cloud-storage-static-website/
+https://www.youtube.com/watch?v=dQfeoSrEIRk
+https://html.com/resources/free-html-templates/
+
+Static website examples and tips:
+https://cloud.google.com/storage/docs/static-website
+
+Best practices for Cloud Storage:
+https://cloud.google.com/storage/docs/best-practices
+
+=======================================
+Transfer Service:
+https://cloud.google.com/products/data-transfer/
+
+Transfer Appliance:
+https://cloud.google.com/transfer-appliance/

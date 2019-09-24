@@ -1,0 +1,282 @@
+GCP CLOUD FUNCTIONS
+https://cloud.google.com/functions/
+
+SERVERLESS COMPUTE OPTION
+EVENT-DRIVEN 
+PYTHON, NODE.JS AND GO
+
+SCALES AUTOMATICALLY
+NO MANAGEMENT OF INFRA
+
+USE- CASE MICROSERVICES
+SECURED CODE
+
+
+
+
+Features:
+https://cloud.google.com/functions/features/
+
+Use cases:
+https://cloud.google.com/functions/use-cases/
+
+Pricing:
+https://cloud.google.com/functions/pricing-summary/
+
+
+Demo:Create cloud function
+
+Enable Cloud functions API
+
+#Cloud function service account - for service to service authentication
+
+Create cloud function
+test_http_trigger_function
+128 MB
+Trigger: HTTP
+
+STATUS 200- OK
+
+Test the function
+{"message":"Hello and Welcome to Cloud Functions training"}
+
+Check logs for more info
+
+GO to Triggers->
+URL:
+https://us-central1-arctic-pad-237204.cloudfunctions.net/function-1
+(GET REQUEST)
+
+Delete
+
+====================================
+
+ 
+KUBERNETES
+
+
+GKE
+
+Docker container:
+https://www.docker.com/resources/what-container
+
+STANDALONE CONTAINERS- LIMITATIONS:
+NO AUTOSCALING-------->SCALE AUTOMATICALLY
+NO AUTOHEALING========> FAULT-TOLERANT, AUTO-HEAL
+NO LOAD-BALANCING======>LOAD-BALANCING
+NO LOOSE-ISOLATION------>BETTER ISOLATION
+
+
+Kubernetes:
+https://kubernetes.io/docs/concepts/overview/what-is-kubernetes/
+
+Kubernetes features:
+https://kubernetes.io/
+
+
+GKE:
+https://cloud.google.com/kubernetes-engine/
+
+
+==========================================
+GCP VPC:
+https://cloud.google.com/vpc/
+https://cloud.google.com/vpc/docs/vpc
+
+VPCs
+virtual- isolated private partitioned network space
+
+GLOBAL SERVICE
+SPANS REGIONS
+
+COMPOSED OF REGIONAL SUBNETS
+
+IPADDRESSES:
+EXTERNAL /INTERNAL
+
+ROUTES:
+AT SUBNET
+
+FIREWALL-> INSTANCE LEVEL
+
+DOCS:https://cloud.google.com/vpc/docs/vpc
+
+
+SUBNETS:
+
+REGIONAL RESOURCES
+
+
+10.0.0.0/16
+
+32-16=16
+
+2^16=65536
+
+10.0.0.0
+10.0.0.1
+10.0.0.2
+10.0.0.3
+...
+
+10.0.0.255
+
+256 IP addresses
+
+10.0.1.0
+10.0.1.1
+10.0.1.2
+10.0.1.3
+
+....
+....
+10.0.1.255
+
+256 IP addresses
+
+
+
+
+subnet no.256
+10.0.255.0
+10.0.255.1
+10.0.255.2
+
+
+
+10.0.255.255
+
+
+
+The minimum primary or secondary range size is eight IP addresses. In other words, the longest subnet mask you can use is /29.
+
+GCP Firewall rules:
+https://cloud.google.com/vpc/docs/firewalls
+
+Source- IP ranges
+Source IP ranges 0.0.0.0/0
+Specified protocols
+
+tcp:22,3389; icmp
+
+
+10.130.0.0/20
+
+
+====================================
+
+VPC Network Peering:
+https://cloud.google.com/vpc/docs/vpc-peering
+
+Demo: Peering VPC in same project:
+1. Create VPC 1
+vpc-us-hsbc
+Subnet : 
+subnet-us-east-a - 10.0.0.0/24
+
+10.0.0.0
+2^8=256
+
+us-east1
+subnet-us-east-b - 10.0.1.0/24
+us-east1
+
+subnet-us-west-b - 10.0.2.0/24
+us-west1
+
+Create Firewall rules:
+hsbc-vpc-us-allow-icmp-ssh
+VPC- vpc-us
+
+Source IP 0.0.0.0/0
+tcp:22; icmp
+
+3. CREATE VPC 2
+vpc-asia-hsbc
+Subnet :
+subnet-asia-a 10.0.3.0/24
+asia-east1 
+subnet-asia-b 10.0.4.0/24
+asia-east2
+
+
+
+Create Firewall rules:
+hsbc-vpc-asia-allow-icmp-ssh
+VPC- vpc-us
+Source IP 0.0.0.0/0
+tcp:22; icmp
+
+4. Create Instances in these two VPCs
+hsbc-us-server
+us-east1
+vpc-us
+Allow HTTP, HTTPS traffic
+
+hsbc-asia-server
+asia-east1 
+vpc-asia
+
+5. VPC network peering
+Create connection 1
+hsbc-us-asia-peer
+#Each side has to be configured
+US - TO - ASIA
+Your VPC vpc-us
+VPC n/w vpc-asia
+
+Create connection 2
+ASIA- TO -US
+hsbc-asia-us-peer
+Your VPC vpc-asia
+VPC n/w vpc-us
+
+Both are active now...
+
+6. Connect VMs
+Instances can connect in a peering connection using internal IP address space
+
+Go to instances
+SSH-> hsbc-asia-server
+
+ping internal IP of hsbc-us-server
+ping -c 3 10.0.0.2
+
+
+
+
+==============================
+GCP Interconnect:
+HYBRID CONNECTIVITY -Enterprise Connectivity:
+https://cloud.google.com/hybrid-connectivity/
+
+
+USING INTERNAL IPS
+
+1. VPN:
+https://cloud.google.com/vpn/docs/concepts/overview
+
+2. GCP Partner Interconnect:
+https://cloud.google.com/interconnect/partners/
+
+3. Dedicated Interconnect:
+https://cloud.google.com/interconnect/docs/concepts/dedicated-overview
+Uses Google Cloud Router:
+https://cloud.google.com/router/docs/
+
+USING EXTERNAL IPS:
+PEERING:
+
+Peering Requierements:
+https://peering.google.com/#/options/peering
+
+Google Peering :
+https://peering.google.com/#/infrastructure
+1. Direct Peering:
+https://cloud.google.com/interconnect/docs/how-to/direct-peering
+
+2. Career Peering:
+https://cloud.google.com/interconnect/docs/how-to/carrier-peering
+
+====================================
+ 

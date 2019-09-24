@@ -1,0 +1,130 @@
+Databases
+PDF:
+NEXT-18 Preparing for the Professional Cloud Architect Examination]
+page 75; 72
+
+Google Cloud database services
+https://cloud.google.com/products/databases/
+
+
+Select the right database for your needs:
+1. Relational:
+For Transactions; Complex Queries and Joins
+
+Cloud SQL https://cloud.google.com/sql/
+PostgreSQL, MySQL, and SQL Server
+Vertical scalability
+
+Cloud Spanner (Horizontal Scaling)
+Fully managed, scalable, relational database service for regional and global application data
+https://cloud.google.com/spanner/
+
+
+2. NoSQL  :
+(For Streaming; IOT; Caching; Time Series; Low latency)
+
+Datastore 
+https://cloud.google.com/datastore/
+
+Firestore 
+NoSQL document database that simplifies storing, syncing, and querying data for your mobile, web, and IoT apps at global scale. 
+https://cloud.google.com/firestore/
+
+Bigtable https://cloud.google.com/bigtable/
+NoSQL-OLTP
+A petabyte-scale, fully managed NoSQL database service for large analytical and operational workloads.
+(Big DATA support)
+
+
+Firebase Realtime Database
+https://firebase.google.com/products/realtime-database/
+The Firebase Realtime Database is a cloud-hosted NoSQL database that lets you store and sync data between your users in realtime.
+
+In-memory data store
+Cloud Memorystore
+https://cloud.google.com/memorystore/
+
+Bigdata/ Analytical - BigTable(- NoSQL- OLTP), BigQuery (OLAP)
+https://cloud.google.com/bigquery/
+ 
+
+Refer:
+
+https://grumpygrace.dev/posts/gcp-flowcharts/
+
+
+
+
+
+
+
+
+
+==================================
+
+SPANNER--- OLTP
+
+
+https://cloud.google.com/spanner/
+
+A global; horizontally scaling ; strongly consistent,
+relational db service (Google proprietary-differs from Cloud SQL-Mysql/PostgreSQl)
+
+Spanner's attraction:horizontally scaling
+(other RDBMS scale vertically)
+
+Vertical Scaling- monolithic arch, no sharding, no replication
+Horizontal Scaling- distributed arch, sharding, replication
+
+
+
+Cloud SQL scales vertically to 10TB; Spanner has no limit
+Cloud SQL is regional; Spanner is global
+
+Strong Consistency:
+It says data will get passed on to all the replicas as soon as a write request comes to one of the replicas of the database.
+
+Eventual Consistency:
+Data getting consistent eventually means it will take time for updates to reach other replicas. So what?
+This implies that if someone reads from a replica which is not updated yet (since replicas are updated eventually) then it may return stale data.
+
+
+Sharding is a type of database partitioning that separates very large databases the into smaller, faster, more easily managed parts called data shards. 
+
+
+
+DEMO:
+
+1. Navigation menu > Spanner > Create instance
+hsbc-spanner
+us-central1
+
+2. Create database.
+
+3. Create a schema for your database
+
+4. Create Table
+EDIT AS TEXT
+
+CREATE TABLE Singers (
+SingerId   INT64 NOT NULL,
+FirstName  STRING(1024),
+LastName   STRING(1024),
+SingerInfo BYTES(MAX),
+BirthDate  DATE,
+)PRIMARY KEY(SingerId);
+
+5. Insert and modify data
+Go to DATA tab
+Click Insert
+
+ 1, BLANK, Marc, Richards, Blank
+Save
+2, BLANK, Catalina, Smith, Blank
+
+
+6. Run a query
+
+Go to Query
+SELECT * FROM Singers
+Cloud Spanner: Qwik Start

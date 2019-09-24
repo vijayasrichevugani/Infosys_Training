@@ -1,0 +1,59 @@
+
+GCP offers a wide variety of storage options suiting various use cases. Let us explore each of them.
+
+https://cloud.google.com/products/storage/ 
+
+OBJECT OR BLOB STORAGE - Cloud Storage 
+BLOCK STORAGE - Persistent disk 
+ARCHIVAL STORAGE -  Cloud Storage 
+FILE STORAGE - Cloud Filestore 
+MOBILE APPLICATION - Cloud Storage for Firebase 
+DATA TRANSFER - Data transfer services 
+COLLABORATION - Drive enterprise 
+-------------------------------------------------------
+
+BLOCK STORAGE - Persistent disk 
+-------------------------------
+Open this page: https://cloud.google.com/compute/docs/disks/ 
+
+GCP has 2 block storage types integrated into GCE, an IaaS product
+	Persistent Disks – Network attached volumes that can be attached to VM instances
+		- Each disk can be either HDD or SSD
+		- Virtual Block storage volumes
+		- The data stored in PD are persisted even if the instance is terminated
+		- Each instance has a single root PD that contains the operating system
+		- Depending on VM’s machine type, 128 volumes/64TB of Persistent disks can be attached
+		- You can attach multiple PD to a single instance. 
+		- PDs are suitable for usage as primary storage for file systems, databases or for any applications
+		- A non-root PD can be attached to more than one instance in read-only mode, allowing you to share static data between multiple instance
+		- Available within zone and are not replicated across zones
+		- Two types: 
+			Zonal(standard and SSD) - data stored within a single zone within a region, replicated across devices
+			Regional(standard and SSD)-Regional block storage replicated in two zones in the same region
+	Local SSD – directly attached to physical machine on which VM instance is running 
+		- Higher throughput and lower latency as compared to PD
+		- Less persistent but more flexible. 
+		- On restart of VM instance, data persists. But on stopping an instance, data will be lost. 
+
+
+
+
+Quiz:
+
+1. Which is the fastest instance storage option that will still be available when an instance is stopped?
+
+RAM disk
+Standard Persistent Disk
+Local SSD
+SSD Persistent Disk.
+
+2. A team of developers have launched many instances in specific zone to meet the compute requirements. To increase the storage capacity of a particular instance they have attached a PD to it with required capacity. They wish to share the static data of PD across multiple instance. Chose the appropriate option:
+
+Static data cannot be shared across multiple instances
+Persistent disk is specific to instance and cannot be shared across instances
+Persistent disk can be shared across multiple instance in read-only mode only
+Persistent disk can be shared across multiple instance in both read and write mode
+
+
+Object Storage
+--------------

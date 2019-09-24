@@ -1,0 +1,10 @@
+Cloud CDN
+---------
+Low-latency, low-cost content delivery using Google's global network
+
+Google Cloud CDN leverages Google's globally distributed edge points of presence to accelerate content delivery for websites and applications 
+Contents are served out of Google Compute Engine for dynamic contents and Google Cloud Storage for static contents 
+
+For cachable contents, Cloud CDN uses HTTP(S) load balancing as the origin for cacheable content. You must use HTTP(S) load balancing as the origin of content cached by Cloud CDN.
+
+for i in {1..3};do curl -s -w "%{time_total}\n" -o /dev/null http://34.98.64.254:80/Capture.PNG; done

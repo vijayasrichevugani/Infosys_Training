@@ -1,0 +1,127 @@
+Pre req 
+Cloud basic 
+
+1. GCP free tier account  - with your CC/DC details 
+
+2. Qwiklabs [ Lab partner for GCP , AWS] - we will credit 25 into your account 
+https://www.qwiklabs.com/catalog
+HSBC ID to sign up 
+it will send an activation link , activate it 
+
+**********************
+RECAP 
+
+what, why cloud  
+GCP, AWS, Azure- global infra
+deployment models - public, private, hybrid, community 
+service modesl- iaas, paas, saas, faas
+Create VM 
+Gcloud storage - storage classses 
+
+
+Day 1: IAM, STorage services 
+Day 2 : Compute 
+Day 3: Network
+DAy 4 : DB 
+Day 5 : Stack driver, Deployment manager, CLI 
+
+*********************
+
+Project - resources put together 
+
+Billing - Budget and alerts  - 25, 50, 90, 100.. % 
+IAM - Identity and access management 
+1. User/ members 
+by individual ID 
+by Googlegroups 
+by gsuite domain 
+by service account 
+
+2. Quotas 
+security 
+judicial usage 
+
+Roles and permissions 
+
+***************
+STorage 
+S3 - AWS 
+GCP - Cloud storage 
+VM creation - Persistent disks 
+
+1. Static - images, videos,audio, pdf, docs.. 
+2. dynamic  - mostly connected with OS, DB .. 
+
+to save on cost 
+
+Hot storage  - frequently accessed 
+
+Cold storage  - infrequently accessed 
+
+Ex: google photos, cctv footages
+
+
+ GCS [ Google Cloud storage] 						PD [ Persistent disks]  
+ static content									dynamic content 
+ accessible anytime anywhere				 accessible only when ur OS is up/snapshot
+ object storage 							block storage 
+ immutable in place 						mutable in place 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

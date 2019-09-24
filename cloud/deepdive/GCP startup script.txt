@@ -1,0 +1,30 @@
+AWS -> On-Demand, Reserved,  Spot
+
+GCP -> Sustained use Discounts, Purchase Agreements, Pre- Emptible instance types
+
+
+-----------------------------------------------------------
+sudo apt-get update				
+sudo apt-get install apache2 -y		
+sudo service apache2 start		
+
+-----------------------------------------------------------------
+sudo service apache2 status
+-----------------------------------------------------------------
+
+
+gcloud compute instances create --help
+
+gcloud compute instances create jamesclassroom --zone us-central1-a
+
+gcloud compute instances start instance-1 --zone=us-central1-a
+
+gcloud compute instances stop instance-1 --zone us-central1-a
+
+gcloud compute instances create test11 --zone us-central1-a --tags=http-server
+
+
+
+----------------------------------------------------------------------------------
+
+Link to read gcloud command -> https://cloud.google.com/sdk/gcloud/reference/compute/instances/create

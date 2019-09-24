@@ -1,0 +1,228 @@
+Day 2 :
+Compute services 
+
+
+Google Compute engine (GCE) - IaaS
+ - Instance types
+ - Reserve external IP address - Static IP
+ - diff images, snapshots 
+ - Instance template
+ - Instance groups
+ 
+ - Load balancing 
+ - Autoscaling 
+
+Google App Engine (GAE)  - PaaS- focus on code 
+Google Kubernetes Engine (GKE)  -IaaS/PaaS
+Cloud functions - serverless - FaaS
+
+
+GCE Vs GAE 	Vs GKE 
+GCE - you do it yourself Pizza
+customized, complete control 
+GAE - order from Vendor online - at your doorstep 
+focus only on outcome 
+GKE - order from store - yor are physically present 
+cloud function - small orders - desserts/drinks.. 
+
+
+GCE
+On demand - 44 out of 50- release the 6 of it back to Data center 
+Preemptible  - you can stop at any point  - batch loads 
+lab processing 
+
+unused VMS - bidding - 56 machines - higher risk 
+ 
+
+pricing of VM - 8 hrs * 0.05 -> price of VM 
+pricing of preemptible - 8 hrs * 0.05 -> price of VM + 50-60% discount 
+notification time - 30 sec 
+
+start up script /user data[script)  - during system boot - it gets executed 
+shut down script  
+DB operations 
+commmit; 
+- 
+
+Mobile hand set - 
+OS + RAM + system apps  + user installed apps [ Facebook] 
+
+VM - linux/Windows OS + built in apps + space + configuration 
+
+LAMP stack - Linux(os) + Apache(webserver)  + Mysql(database)  + PHP (language) - Open source 
+
+
+user request <-> webserver <-> process <-> dynamic data <-> DB <-> pull out data 
+
+Instance  + 10GB disk space 
+stop your instance - appln are not accessible + billing gets stopped 
+
+Communication 
+- Protocols 
+- SSH - secure shell - only for Linux machines 
+- RDP - remote desktop protocol - - windows
+ - HTTP - hyper text transfer protocol - internet 
+ - HTTPS - secured way 
+
+ 10.128.0.29 (nic0)	
+34.70.194.190  - external IP 
+
+
+URL 
+www.abc.com  -> IP address 
+start and stop the instance - External IP is released 
+
+STatic IP -
+When allocated - it is in yoru account you are billed for it
+When associated  - its in your account + used by someone- not billed /taken care by VM cost 
+
+
+************
+Creating VM - with a disk  [ Diks - delete on instance deletion ] - unchcked 
+static IP - mapped to instance 
+apache as startup script - start/stop - via cli - ssh 
+front end - external IP address 
+
+***************
+difference between images and snapshot 
+images 								snapshots 
+instance /source disk 					disks 
+
+
+INSTANCE TEMPLATE: 
+
+Instance groups 
+- Managed instance groups - MIG  - same configuration
+- Unmanaged instance groups - UMIG
+
+ASIA - Mumbai - a, b, c - Single region 
+
+Multi region - Asia mumbai  + US central + europe 
+
+
+Scaling 
+vertical scaling - RAM upgrade - scale up  , scale down 
+horizontal scaling - more resources  - scale in , scale out 
+
+malicious attacks 
+
+instance template - fuel filled inside fire extinguisher 
+instacne groups - fire extinguisher 
+
+
+ASsignment # 1,2a, 3 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

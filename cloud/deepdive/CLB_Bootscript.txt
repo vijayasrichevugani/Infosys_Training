@@ -1,0 +1,24 @@
+#! /bin/bash
+
+apt-get update
+
+apt-get install -y apache2
+
+cat <<EOF > /var/www/html/index.html
+
+<html><body><h2>Welcome to my web page in $(hostname)</h2>
+
+</body></html>
+
+EOF
+
+service apache2 start
+
+
+
+
+========================================================
+
+go get -u github.com/rakyll/hey
+
+hey -n 12000 -c 10 -q 1 http://34.102.150.116/

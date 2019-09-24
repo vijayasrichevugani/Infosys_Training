@@ -1,0 +1,37 @@
+Step1:This function generates logs as and when data is overwritten or created in corresponding GCS bucket.
+
+def hello_gcs_generic(data, context):
+    """Background Cloud Function to be triggered by Cloud Storage.
+       This generic function logs relevant data when a file is changed.
+
+    Args:
+        data (dict): The Cloud Functions event payload.
+        context (google.cloud.functions.Context): Metadata of triggering event.
+    Returns:
+        None; the output is written to Stackdriver Logging
+    """
+
+    print('Event ID: {}'.format(context.event_id))
+    print('Event type: {}'.format(context.event_type))
+    print('Bucket: {}'.format(data['bucket']))
+    print('File: {}'.format(data['name']))
+    print('Metageneration: {}'.format(data['metageneration']))
+    print('Created: {}'.format(data['timeCreated']))
+    print('Updated: {}'.format(data['updated']))
+
+
+Step 2: Switch to gcloud --> cd /home/krajeshkandikonda/python-docs-samples/functions/http
+	create/overwrite main.py with the above code.
+
+Step 3: Deploy the function. 
+	
+gcloud functions deploy hello_gcs_generic --runtime python37 --trigger-resource rajeshbuck-1232 --trigger-event google.storage.object.finalize
+
+step 4: upload a newer version of the object in rajeshbuck-1232. 
+
+step 5: gcloud functions logs read hello_gcs_generic
+
+Repeat step 4 and 5. You will understand that the function is getting invoked in the background as and when the objects inside the specified bucket are updated or new objects are created.
+
+https://cloud.google.com/functions/docs/calling/storage
+

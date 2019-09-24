@@ -1,0 +1,190 @@
+
+Google’s Infrastructure as a Service [IAAS]
+It offers flexible, self-managed virtual machines hosted on Google’s infrastructure 
+It allows you to easily enable from single instance to global compute clusters on Google’s infrastructure with no upfront investments
+Compute Engine supports autoscaling and load balancing for groups of instances
+
+Key Components:
+Compute Engine 		
+	-run Large scale workloads on Virtual machines hosted on Google’s infrastructure 
+App Engine 
+	-A Platform for building scalable web apps and mobile backends
+Container Engine 
+	-Run Docker containers on Google’s infrastructure, powered by Kubernetes
+Cloud Functions 
+	-A server less Platform for building event-based micro services
+
+Features offered by Compute Engine
+---------------------------------
+
+Images
+-------
+	- Images provides the information required to launch the instance
+	- It contain a boot loader, an operating system, and a root file system
+	- It is of two types :
+		- Public Images
+		- Private Images
+	Public Images :
+		Provided and maintained by Google, Open Source community and third party vendors
+		All projects in GCP can access to these images and can use them to create instances
+		Images are compatible to both Windows and Linux OS
+		Includes  CentOS6 and Debian7 also preview support for RHEL and SUSE
+	Private Images :
+		You can customize your instances by creating private images of boot disk 
+		and use them for creating new instances
+
+GCP – Snapshots
+----------------
+	-
+By using GCP regular snapshots of persistent disk you can 
+    have periodic backups
+You create snapshots from persistent disks (PD) even while they are in attached to running instances
+
+Instances and Types
+-------------------
+A machine type is a set of virtualized hardware resources available to a virtual machine (VM) instance, including the system memory size, virtual CPU (vCPU) count, and persistent disk limits
+
+In Compute Engine, machine types are grouped and curated for different workloads. You can choose from general-purpose machine types, memory-optimized machine types, and compute-optimized machine types.
+
+You can select from a number of predefined machine types in each machine type family. 
+
+If the predefined machine types do not meet your needs, you can create your own custom machine types.
+
+Custom machine types are ideal for the following scenarios:
+	- Workloads that are not a good fit for the predefined machine types that are available to you.
+    	- Workloads that require more processing power or more memory, but don't need all of the upgrades that are provided by the next larger predefined machine type.
+
+
+Storage Volumes - Persistant disk
+---------------------------------
+
+Static IP addresses
+-------------------
+-Google Cloud Platform (GCP) resources can have internal IP addresses and external IP addresses. 
+-Instances use these addresses to communicate with other Cloud Platform resources and external systems.
+-Each VM instance can have one primary internal IP address and and one external IP address.
+- To communicate between instances on the same Virtual Private Cloud (VPC) network, you can use an instance's internal IP addresses. 
+-To communicate with the Internet, you must use the instance's external IP address 
+
+Compute Engine supports two types of external IP addresses:
+
+    - Static external IP addresses
+	    Static external IP addresses are assigned to a project long term until they are explicitly released, and remain attached to a resource until they are explicitly detached.
+    	    For VM instances, static external IP addresses remain attached to stopped instances until they are removed.
+
+    - Ephemeral external IP addresses
+
+    Ephemeral external IP addresses are available to VM instances
+    Ephemeral external IP addresses remain attached to a VM instance only until the VM is stopped and restarted or the instance is terminated. 
+    If an instance is stopped, any ephemeral external IP addresses assigned to the instance are released back into the general Compute Engine pool and become available for use by other projects. 
+    When a stopped instance is started again, a new ephemeral external IP address is assigned to the instance.
+
+
+
+Firewall rules
+Regions
+Zones
+Start up scripts:
+-----------------
+#! /bin/bash
+apt-get update
+apt-get install -y apache2
+cat <<EOF > /var/www/html/index.html
+<html><body><h1>Hello World</h1>
+<p>This page was created from a simple startup script!</p>
+</body></html>
+EOF
+
+
+
+
+
+Instance Groups
+----------------
+
+Open this link: https://cloud.google.com/compute/docs/instance-groups/
+
+An instance group is a collection of VM instances that you can manage as a single entity.
+
+Compute Engine offers two kinds of VM instance groups:
+	Managed instance groups (MIGs) 
+		allow you to operate applications on multiple identical VMs. 
+		You can make your workloads scalable and highly available by taking advantage of automated MIG services, including: autoscaling, autohealing, regional (multi-zone) deployment, and auto-updating.
+
+Uses an Instance group template: 
+	Start up script: 
+#! /bin/bash
+apt-get update
+apt-get install -y apache2
+cat <<EOF > /var/www/html/index.html
+<html><body><h1>Instance Group Demo</h1>
+<p>This page is generated by instances under an Instance Group!</p>
+</body></html>
+EOF
+
+
+    	Unmanaged instance groups 
+		- allow you to load balance across a fleet of VMs that you manage yourself.
+
+Use an Intance Group template
+
+VM Instance Pricing
+-------------------
+https://cloud.google.com/compute/vm-instance-pricing 
+
+All vCPUs, GPUs, and GB of memory are charged a minimum of 1 minute. For example, if you run your virtual machine for 30 seconds, you will be billed for 1 minute of usage.
+
+After 1 minute, instances are charged in 1 second increments.
+
+
+Google Cloud Functions
+-----------------------
+Google Cloud Functions is a serverless execution environment for building and connecting cloud services.
+
+With Cloud Functions you write simple, single-purpose functions that are attached to events emitted from your cloud infrastructure and services. 
+
+Your function is triggered when an event being watched is fired. Your code executes in a fully managed environment.
+There is no need to provision any infrastructure or worry about managing any servers.
+
+Cloud Functions can be written using JavaScript, Python 3, or Go runtimes on Google Cloud Platform.
+
+You can take your function and run it in any standard Node.js (Node.js 6, 8 or 10), Python 3 (Python 3.7) or Go (Go 1.11) environment, which makes both portability and local testing a breeze.
+
+Cloud Functions are stateless - 
+
+Events and triggers
+------------------- 
+
+Cloud events are things that happen in your cloud environment. 
+
+These might be things like changes to data in a database, files added to a storage system, or a new virtual machine instance being created.
+
+Events occur whether or not you choose to respond to them. You create a response to an event with a trigger. 
+
+A trigger is a declaration that you are interested in a certain event or set of events. 
+
+Binding a function to a trigger allows you to capture and act on events. one function invocation should not rely on in-memory state set by a previous invocation.
+
+
+Show Use Cases
+https://cloud.google.com/functions/docs/concepts/overview
+
+Cloud Functions Execution Environment:
+https://cloud.google.com/functions/docs/concepts/exec
+
+Cloud Functions run in a fully-managed, serverless environment where Google handles infrastructure, operating systems, and runtime environments completely on your behalf. 
+
+Each Cloud Function runs in its own isolated secure execution context, scales automatically, and has a lifecycle independent from other functions.
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,200 @@
+GAE:
+
+
+https://cloud.google.com/appengine/
+
+Paas Offering on GCP
+(you don't interact with underlying instances)
+
+FEATURES:
+MIN. SETP OF H/W
+BUILT-IN LOAD BALANCING , AUTOSCALING
+
+DEV TOOLS
+ECLIPSE, MAVEN, GIT, JENKINS
+
+APP ENGINE
+2 TYPES
+STANDARD- SPKIES IN TRAFFIC
+PYTHON, JAVA, NODE.JS, PHP, GO
+LIGHTWEIGHT
+SECONDS TO STARTUP
+DO NOT NEED ACCESS TO OS, M/C
+
+FLEXIBLE
+DOCKER
+CUSTOMIZED ENV
+PYTHON, JAVA, NODE.JS, PHP, GO+ RUBY+ RUNTIME FLEXIBILTY
+NEED ACCESS TO OS, M/C
+MINUTES TO START
+
+
+Microservice: A microservice is a small, loosely coupled distributed service.
+
+
+Download and install the APP Engine SDK :
+https://cloud.google.com/appengine/downloads
+Eg: Java
+
+
+Deploy Java application:
+https://www.youtube.com/watch?v=RaYeOlT1jHQ
+
+Getting started with GAE
+You must get an account on Google’s cloud 
+Go to console
+https://console.cloud.google.com/appengine/
+
+
+
+==================================
+gcloud code editor:
+
+Folder: gae_code 
+	-> Folder:greetings
+3 files:
+main.py
+requirements.txt
+app.yaml
+---------------
+
+main.py
+
+from flask import Flask
+app = Flask(__name__)
+@app.route('/')
+
+def greetings():
+    return "Welcome to Greetings card application"
+
+if __name__== '__main__':
+    app.run(host='127.0.0.1',port=8080, debug= True)
+
+-----------------------------
+
+requirements.txt
+
+Flask==1.0.2
+
+-----------------------------
+
+app.yaml
+scaling type and instance class are specified in the configuration file 
+
+https://cloud.google.com/appengine/docs/standard/python/config/appref
+
+
+runtime : python37
+
+instance_class : F2
+
+automatic_scaling:
+ target_cpu_utilization: 0.65
+ min_instances: 5
+ max_instances: 100
+ min_pending_latency: 30ms
+ max_pending_latency: automatic
+ max_concurrent_requests: 50
+
+---------------------------------
+
+gcloud auth application-default login
+#authenticate with new credentials with ur account
+
+#CLICK URL
+#COPY CODE to gcloud shell
+
+ls
+cd gae_codes/greetings
+sudo pip install -r requirements.txt
+
+#RUN APP LOCAL SERVER
+	
+dev_appserver.py app.yaml
+
+#PREVIEW on port 8080
+
+#RUN APP ON GAE
+gcloud app deploy --version greetings
+
+#Default service is hosted at:
+project_id.appspot.com
+[https://arctic-pad-237204.appspot.com]
+
+#HIT URL
+https://arctic-pad-237204.appspot.com/
+
+#METADATA
+gcloud app describe
+
+#open browser
+gcloud app browse
+
+#WEB CONSOLE- view metadata, instances, error reporting (Stackdriver), 
+services (one version running), Versions (Tools), Instances
+
+Version- tools: logs-> Stackdriver logging (analyze and explore logs)
+Version- tools: debug -> Stackdriver debugging (debug app while its running in production)-> REQUIRES (APP ENGINE CODE VIEWER ROLE)
+
+
+
+===========================
+Installing the Google Plugin for Eclipse to create Web Application  
+https://cloud.google.com/eclipse/docs/migrating-gpe
+
+ECLIPSE PHOTON
+HELP -> ECLIPSE MARKETPLACE
+
+search for Google Cloud - Restart Eclipse when prompted.
+
+==========================
+
+Settings-> Disable application
+
+=============================
+PRICING
+https://cloud.google.com/appengine/pricing
+
+================================== 	
+
+GCP CLOUD FUNCTIONS
+https://cloud.google.com/functions/
+
+Features:
+https://cloud.google.com/functions/features/
+
+Use cases:
+https://cloud.google.com/functions/use-cases/
+
+Pricing:
+https://cloud.google.com/functions/pricing-summary/
+
+
+Demo:Create cloud function
+
+Enable Cloud functions API
+
+#Cloud function service account - for service to service authentication
+
+Create cloud function
+test_http_trigger_function
+128 MB
+Trigger: HTTP
+
+STATUS 200- OK
+
+Test the function
+{"message":"Hello and Welcome to Cloud Functions training"}
+
+Check logs for more info
+
+GO to Triggers->
+URL:
+https://us-central1-arctic-pad-237204.cloudfunctions.net/function-1
+(GET REQUEST)
+
+Delete
+
+====================================
+
+ 

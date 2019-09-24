@@ -1,0 +1,18 @@
+Google Compute Engine - IAAS
+- Instance types
+- Load Balancing	
+- Autoscaling
+- Instance Groups
+- Instance template
+
+Google App Engine (GAE) - PAAS - focus on code
+
+Google Kuberteness Engine (GKE) - IAAS/PAAS 
+
+Cloud Functions - serverless - FAAS
+
+GCE vs GAE vs GKE
+GCE - you do it yourself Pizza
+customized, complete control
+GAE - order from vendor online at your doorstep
+GKE - 

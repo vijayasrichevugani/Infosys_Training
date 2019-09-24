@@ -1,0 +1,15 @@
+Cloud CDN
+---------
+Content Delivery network - Edge locations - Locations distributed across globe which holds caching servers
+
+
+1. Under Network Services, Click on CLoud CDN,
+2. Create an Orgin
+3. Create a HTTP Load balancer or select an existing LB
+4. In the LB configuration, provide backend as cloud storage bucket
+5. Place an image in the Cloud Storage bucket and make it public 
+6. Copy the Lb URL and try to trigger access requests
+
+
+
+for i in {1..3};do curl -s -w "%{time_total}\n" -o /dev/null http://<IP Address of LoadBalancer>/<ImageName>; done

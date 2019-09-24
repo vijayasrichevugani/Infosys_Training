@@ -1,0 +1,171 @@
+firewall-cmd --zone=public --permanent --add-service=http
+
+Setting up a Webserver - POC :
+# history
+    1  yum update -y
+    2  clear
+    3  yum install httpd -y
+    4  systemctl start httpd
+    5  systemctl status httpd
+    6  systemctl enable  httpd
+    7  firewall-cmd --zone=public --permanent --add-service=http
+    9  firewall-cmd --zone=public --permanent --add-service=https
+   10  firewall-cmd --reload
+   11  cd /var/www/html
+   12  ls
+   13  vi index.html
+   14  history
+
+#!/bin/bash
+sudo su -
+yum install httpd -y
+service httpd start
+chkconfig httpd on
+cat  >/var/www/html/index.html <<EOF
+<html>
+<body bgcolor="ddeeff">
+<h1> Hai this is my first ws demo on AWS </h1>
+<h2> My next line </h2>
+</body>
+</html>
+EOF
+Batch 2 – Dennis Ritchie
+https://infosystechnologies.sharepoint.com/sites/Filesharing/Lists/HSBC_2019_Deepdive_Cloud_Feedback_Batch_2/overview.aspx
+
+
+
+
+
+
+
+
+As a Customer you may consume cloud services from GCP 
+4 ways :
+1)Web console
+2)Google Cloud shell
+3)Google SDK (gcloud, gsutil, bq,..many more )
+ These utilities comes installed in the Google shell 
+however you can get them deployed of a VM/Laptop/Desktop and manage resources from anywhere  
+
+4)Google Mobile SDK Suite 
+
+1)  Create a VM denian linux by nature 
+
+Setting up SDK in a debian Linux Virtual Machine:
+=================================================
+curl https://sdk.cloud.google.com | bash
+    9  . .bash_profile
+   10  ls -a
+   11  . .bashrc
+   12  ps -a
+   13  ps -f
+
+gcloud foundations:
+===================
+
+1) gcloud version
+2) gcloud info
+3) gcloud components list
+4) gcloud components update
+
+Project Related commands:
+=========================
+1)	gcloud compute project-info describe
+2) 	gcloud config list
+3)	gcloud config list project
+4)	gcloud beta billing accounts list
+
+
+zones and regions on GCP Cloud:
+===============================
+
+   87  clear
+   88  gcloud compute zones list
+   89  gcloud compute regions list
+
+gcloud iam commands:
+====================
+1)	gcloud iam service-accounts list
+2)	gcloud auth list
+3)	gcloud auth print-access-token
+4)	gcloud auth print-refresh-token
+5)	gcloud iam roles list
+
+gcloud deployment manager commands:
+===================================
+1)	gcloud deployment-manager deployments list
+
+gcloud compute Commands :
+========================
+1) gcloud compute images list
+2) gcloud compute instances delete demo-inst1 --zone asia-south1-a
+3) gcloud compute instances list
+4)  gcloud compute instances create demo-inst1 --zone asia-south1-a --type f1-micro
+5) gcloud compute instances stop demo-inst1 --zone asia-south1-a
+6) gcloud compute instances start demo-inst1 --zone asia-south1-a
+
+7) gcloud compute instances move sdk-demo-inst2 --destination-zone=asia-south1-b --zone=asia-south1-c  # live migration of an instance ..
+
+8)gcloud compute instances list --filter="zone:asia-south1-c"
+
+Storage related gcloud utils:
+==============================
+1) 	gcloud compute disks list
+2)	gcloud compute disk-types list
+3)	gcloud compute snapshots list
+	
+gcloud network command demos:
+============================
+1) 	gcloud compute networks list
+2)	gcloud compute addresses list
+3)	gcloud compute routes list
+4)	gcloud compute firewall-rules list
+5)	gcloud compute forwarding-rules list
+
+gsutil commands:
+================
+
+gsutil  mb -c standard  -l asia-south1   gs://mydemobuc120aug19
+
+ 1  gcloud compute --project "arctic-pad-237204" ssh --zone "asia-south1-a" "demo-ws1"
+    2  ls
+    3  less README-cloudshell.txt
+    4  ls
+    5  clear
+    6  gcloud beta compute --project "arctic-pad-237204" ssh --zone "asia-south1-a" "balademoinst"
+    7  clear
+    8  
+   14  exit
+   15  gsutil  mb -c standard  -l asia-south1   gs://mydemobuc120aug19
+   16  gcloud config set project arctic-pad-237204
+   17  pwd
+   18  gsutil  mb -c standard  -l asia-south1   gs://mydemobuc120aug19
+   19  gsutil  mb -c standard  -l asia-south1  gs://mydemobuc120aug19
+   20  gsutil  ls  gs://mydemobuc120aug19
+
+gsutil  mb -c standard  -l asia-south1  gs://mydemobuc2
+ 3  gcloud config set project arctic-pad-237204
+    4  cd /var/log
+    5  ls
+    6  ls *.log
+    7  gsutil cp *.log gs://mydemobuc120aug19
+    8  gsutil ls gs://mydemobuc120aug19
+    9  gsutil  mb -c standard  -l asia-south1  gs://mydemobuc2
+   10  gsutil ls
+   11  gsutil cp  gs://mydemobuc120aug19/*.log gs://mydemobuc2/
+   12  gsutil ls  gs://mydemobuc2/
+   13  gsutil rm  gs://mydemobuc2/kern.log
+   14  gsutil rm  gs://mydemobuc2/*.log
+   15  gsutil rb  gs://mydemobuc2/
+   16  gsutil ls
+   17  gsutil ls gs://deep2019/
+   18  gsutil ls gs://deep2019
+   19  gsutil rb gs://deep2019
+   20  gsutil rb gs://mydemobuc120aug19/
+   21  gsutil rm gs://mydemobuc120aug19/*
+   22  gsutil rb gs://mydemobuc120aug19
+   23  history
+ gsutil du -h gs://staging.arctic-pad-237204.appspot.com/
+
+Batch 2 – Dennis Ritchie
+https://infosystechnologies.sharepoint.com/sites/Filesharing/Lists/HSBC_2019_Deepdive_Cloud_Feedback_Batch_2/overview.aspx

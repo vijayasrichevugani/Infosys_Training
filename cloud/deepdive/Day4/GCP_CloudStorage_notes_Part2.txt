@@ -1,0 +1,167 @@
+Cloud Storage
+==============
+
+Key concepts:-
+-------------
+
+-> The storage class you set for an object affects the object's availability 
+and pricing model.
+
+->You can change the storage class of an existing object.
+
+-> When you create a bucket, you can specify a default storage class for the 
+bucket. When you add objects to the bucket, they inherit this storage class 
+unless explicitly set otherwise.
+
+-> If you don't specify a default storage class when you create a bucket, 
+that bucket's default storage class is set to Standard Storage.
+
+-> Changing the default storage class of a bucket does not affect any of the 
+objects that already exist in the bucket.
+
+
+Class descriptions:-
+--------------------
+
+The following aspects apply to all storage classes:
+
+-> Unlimited storage with no minimum object size.
+-> Worldwide accessibility and worldwide storage locations.
+-> Low latency (time to first byte typically tens of milliseconds).
+-> High durability (99.999999999% annual durability).
+-> Geo-redundancy (availability) if the data is stored in a multi-region or dual-region.
+
+1) Standard Storage:-
+   ------------------
+
+-> Standard Storage is best for data that is frequently accessed ("hot" data).
+
+-> When used in a region, Standard Storage is appropriate for storing data 
+in the same location as Google Kubernetes Engine clusters or 
+Compute Engine instances that use the data. It reduce network charges.
+
+-> When used in a dual-region, you still get optimized performance 
+when accessing Google Cloud Platform products that are located in one of the 
+associated regions, but you also get the improved availability that 
+comes from storing data in geographically separate locations.
+
+-> When used in a multi-region, Standard Storage is appropriate for storing data 
+that is accessed around the world, such as serving website content, streaming 
+videos, executing interactive workloads, or serving data supporting mobile and 
+gaming applications.
+
+Availability:
+~~~~~~~~~~~~~~
+
+The availability of Standard Storage data is:
+
+Location Type	Typical monthly availability
+multi-region		>99.99%
+dual-region		>99.99%
+region			99.99%
+
+If Google fails to meet that uptime, customers are eligible to receive a credit 
+as described in the Cloud Storage SLA policy.
+
+
+Nearline Storage:-
+=================
+
+-> Nearline Storage is a low-cost, highly durable storage service for storing 
+infrequently accessed data. 
+
+-> Nearline Storage is a better choice than Standard Storage in scenarios where 
+slightly lower availability and a 30-day minimum storage duration and are 
+acceptable.
+
+-> Nearline Storage is ideal for data you plan to read or modify on average once 
+per month or less. For example, if you want to continuously add files to Cloud 
+Storage and plan to access those files once a month for analysis, Nearline Storage 
+is a great choice.
+
+-> Nearline Storage is also appropriate for data backup, long-tail multimedia 
+content, and data archiving. 
+
+Note, however, that for data accessed less frequently than once a year, Coldline 
+Storage is the most cost-effective choice, as it offers the lowest storage costs.
+
+Availability:
+~~~~~~~~~~~~~
+
+The availability of Nearline Storage data is:
+
+Location Type		Typical monthly availability
+multi-region		99.95%
+dual-region		99.95%
+region			99.9%
+
+
+Coldline Storage:-
+=================
+
+-> Coldline Storage is a very-low-cost, highly durable storage service for data 
+archiving, online backup and disaster recovery. 
+
+-> Unlike other "cold" storage services, your data is available within milliseconds,
+ not hours or days.
+
+-> Coldline Storage is the best choice for data that you plan to access at most 
+once a year, due to its slightly lower availability and 90-day minimum storage 
+duration. 
+
+-> For example:
+
+	->Cold data storage - Infrequently accessed data, such as data stored for 
+legal or regulatory reasons, can be stored at low cost as Coldline Storage and be 
+available when you need it.
+
+	->Disaster recovery - In the event of a disaster recovery event, recovery 
+time is key. Cloud Storage provides low latency access to data stored as Coldline 
+Storage.
+
+Availability:
+~~~~~~~~~~~~~
+
+The availability of Coldline Storage data is:
+
+Location Type		Typical monthly availability
+multi-region		99.95%
+dual-region		99.95%
+region			99.9%
+
+
+Note: To change your current objects’ storage classes, use gsutil or the
+Cloud Storage API, it can not happen via the console.
+
+
+Creating storage buckets steps:-
+===============================
+
+To create a new storage bucket:
+
+-> Open the Cloud Storage browser in the Google Cloud Platform Console.
+-> Click Create bucket to open the bucket creation form.
+
+-> Enter your bucket information and click Continue to complete each step:
+	-> Specify a Name, subject to the bucket name requirements.
+	-> Select a Default storage class for the bucket. The default storage 
+	class will be assigned by default to all objects uploaded to the bucket. 
+	-> Next, select a Location where the bucket data will be permanently 
+	stored.
+	-> Select an Access control model to determine how you control access to 
+	the bucket's objects.
+	-> Optionally, you can add bucket labels, set a retention policy and choose 
+	an encryption method.
+
+
+Note: To change your current objects’ storage classes, use gsutil or the
+Cloud Storage API, it can not happen via the console.
+
+
+Static website hosting on Cloud Storage video
+================================================
+
+
+https://www.youtube.com/watch?v=ACifzOIR_Ec 
+
+ 

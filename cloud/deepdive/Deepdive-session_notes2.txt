@@ -1,0 +1,55 @@
+Permissions
+=============
+format : service.resource.verb
+
+ex- compute.instances.stop
+Role is a collection of permissions
+
+Role can have permissions : appengine.stop
+				storage.create
+				compute.create
+
+Role -> members- users, google grp, service acnts
+
+Role types:
+
+1- Predefined role
+
+Role : compute
+
+a- Compute.instance.delete
+b- compute.instance.list
+c- compute.instance.stop
+d- compute.instance.get
+
+2- Custom role
+
+Role : myorgneeds
+
+a- compute.instance.start
+b- storage.bucket.create
+c- compute.instance.setmachine
+
+3- Primitive roles
+
+a- Owner -> All permissions
+b- Viewer -> Read only permissions
+c- Editor -> Edit permissions
+
+Transfer
+===========
+To transfer files from one bucket to another bucket
+
+Tranfer appliance
+==================
+An appliance used to migrate petabytes of data to and from Cloud.
+
+
+
+
+
+
+
+
+
+

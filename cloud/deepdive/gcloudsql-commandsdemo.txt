@@ -1,0 +1,32 @@
+gcloud sql connect <dbinstance-ID> -u root
+show databases;
+create database testdb;
+show databases;
+use mysql ;
+show tables;
+> exit;
+Bye
+itsbala9701@cloudshell:~ (arctic-pad-237204)$
+
+1  cat /etc/issue
+    2  apt-get update 
+    3  clear
+    4  apt-get update 
+    5  apt-get install mysql-client -y
+    6  clear
+    7  history
+    8  mysql  -u root -h 35.200.241.17 -p
+
+
+show databases;
+create database geography;
+show databases;
+use geography;
+show tables;
+CREATE TABLE cities (city VARCHAR(255), country VARCHAR(255));
+desc cities;
+show tables;
+INSERT INTO cities (city, country) values ("San Francisco", "USA");
+INSERT INTO cities (city, country) values ("Beijing", "China");
+INSERT INTO cities (city, country) values ("Mumbai", "India");
+select * from cities;

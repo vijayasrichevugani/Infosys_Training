@@ -1,0 +1,22 @@
+Step 1 : Create an instance 
+Step 2: Connect to instance 
+gcloud sql connect navneet-mysql --user=root
+
+Step 3: Create and use that database
+
+CREATE DATABASE HSBCfriendsbook;
+USE HSBCfriendsbook;
+
+Step 4: Perform DDL , DML operations
+CREATE TABLE entries (friendName VARCHAR(255), content VARCHAR(255),
+    entryID INT NOT NULL AUTO_INCREMENT, PRIMARY KEY(entryID));
+    INSERT INTO entries (friendName, content) values ("first friend", "I got here!");
+    INSERT INTO entries (friendName, content) values ("second friend", "Me too!");
+
+commit;
+SELECT * FROM entries;
+
+
+Step 5: Check the replication happening in failover DB 
+
+Step 6: Clean up! 

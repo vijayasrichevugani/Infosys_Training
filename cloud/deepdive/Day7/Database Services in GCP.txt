@@ -1,0 +1,121 @@
+https://cloud.google.com/products/databases/
+
+Database types:- 
+
+	1. Relational
+		Common Use cases: Compatibility, Transactions, Complex queries, Joins
+		Examples: Cloud Spanner, Cloud SQL
+	2. Non-relational/No-SQL
+		Common Use cases: Time series, Streaming, Mobile, Web, IoT, Offline sync, Caching, Low latency
+		Examples: Cloud Bigtable, Cloud Firestore, Firebase Realtime Database, Cloud Memorystore
+
+
+Cloud SQL: Cloud SQL is a fully managed database service that makes it easy to set up, maintain, manage, and administer your relational MySQL and PostgreSQL databases in the cloud.
+
+Cloud Spanner: Cloud Spanner is a mission-critical, scalable relational database service, built to support transactions, strong consistency, and high availability across regions and continents.
+
+Cloud Bigtable:  NoSQL database service for use cases where low latency reads and high throughput writes, scalability, and reliability are critical.
+
+Cloud Firestore: Cloud Firestore is a fast, fully managed, serverless, cloud-native NoSQL document database that simplifies storing, syncing, and querying data for your mobile, web, and IoT apps at global scale. Cloud Firestore is the next generation of Cloud Datastore.
+
+Firebase Realtime Database: The Firebase Realtime Database is a cloud-hosted NoSQL database that lets you store and sync data between your users in real time.
+
+Cloud Memorystore: Cloud Memorystore is a fully managed in-memory data store service for Redis built on scalable, more secure, and highly available infrastructure.
+
+
+
+
+Cloud Spanner
+------------
+
+Spanner is Google's NewSQL database.
+
+New SQL - NewSQL is a class of relational database management systems 
+	- provide the scalability of NoSQL systems for online transaction processing (OLTP) workloads while maintaining the ACID guarantees of a traditional database system.
+
+	OLTP - OLTP has also been used to refer to processing in which the system responds immediately to user requests, typically facilitate and manage transaction-oriented applications. The key goals of OLTP applications are availability, speed, concurrency and recoverability
+	ACID properties: Atomicity(either all occur, or nothing occurs. Example: monetary transfer from bank account A to account B. It consists of two operations, withdrawing the money from account A and saving it to account B. Performing these operations in an atomic transaction ensures that the database remains in a consistent state, that is, money is neither lost nor created if either of those two operations fail.)
+			 Consistency,
+		         Isolation
+			 Durability
+
+Spanner is a globally distributed database service that gives developers a production-ready storage solution. 
+
+- It provides key features such as global transactions, strongly consistent reads, and automatic multi-site replication and failover. 
+
+- 99.999% availability SLA, no planned downtime, and enterprise-grade security
+- <5 minutes per year downtime 
+
+Cloud SQL
+---------
+- Cloud SQL is a fully-managed database service that makes it easy to set up, maintain, manage, and administer your relational databases on Google Cloud Platform.
+- You can use Cloud SQL with either MySQL or PostgreSQL
+
+	MySQL
+	PostrreSQL
+
+- Cloud SQL is perfect for WordPress sites, ecommerce applications, CRM tools, geospatial applications, and any other application that is compatible with MySQL, PostgreSQL, or SQL Server.
+
+-    >99.95% availability, anywhere in the world.
+- Cloud SQL delivers high performance and scalability with up to 30 TB of storage capacity, 60,000 IOPS, and 416 GB of RAM per instance.
+
+- Cloud SQL offers per-second billing, automatic sustained-use discounts
+
+https://cloud.google.com/sql/docs/mysql/connect-admin-ip
+Select the Connections tab.
+Under Authorized networks, click Add network and enter the IP address of the machine where mysql is installed. 
+In Cloud SQL instance, allow external connections, add the IP/32 of the instance
+
+
+SSH to instance
+----------------
+sudo apt-get update
+sudo apt-get install mysql-client
+mysql --host=34.66.173.209 --user=root --password
+
+show databases;
+
+create a database
+-----------------
+CREATE DATABASE dbname;
+
+Use the database:
+-----------------
+ use demodatabase1;
+
+create a table:
+---------------
+CREATE TABLE demotable1 ( id smallint unsigned not null, name varchar(20) not null, constraint pk_demotable1 primary key (id) );
+INSERT INTO demotable1 ( id, name ) VALUES ( 111, 'HSBCUser1' );
+INSERT INTO demotable1 ( id, name ) VALUES ( 112, 'HSBCUser2' );
+
+
+
+SELECT name FROM demotable1 where id=111;
+
+
+Using the mysql client in the Cloud Shell
+------------------------------------------
+    Go to the Google Cloud Platform Console.
+
+    Go to the Google Cloud Platform Console
+    Click the Cloud Shell icon towards the right in the tool bar.
+
+    The Cloud Shell takes a few moments to initialize.
+    At the Cloud Shell prompt, use the built-in mysql client to connect to your Cloud SQL instance:
+
+    gcloud sql connect [INSTANCE_ID] --user=root
+
+    Enter your password.
+
+
+
+
+
+
+
+
+
+
+
+

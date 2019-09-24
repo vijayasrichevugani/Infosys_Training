@@ -1,0 +1,114 @@
+Day 4 - STorage and DB 
+
+Unstructured data - static files - GCS 
+
+STructured data 
+Databases on GCP 
+
+
+Transactional - OLTP 
+- RDBMS  - Cloud SQL , Spanner 
+- NoSQL - Datastore/Firestore, BigTable 
+ 
+
+Data Analytics - BigQuery - OLAP 
+
+Firebase - Mobile SDK 
+Cache - memory store 
+
+DAtabase options - Flow chart 
+
+https://medium.com/google-cloud/a-gcp-flowchart-a-day-2d57cc109401
+
+
+scalability 
+-vertical  - scale up and down - Cloud SQL 
+- horizontal - scale in and out  - Spanner 
+
+
+GCE - IaaS 
+
+LAMP stack 
+
+Linux + MySQL  
+Cloud SQL - PaaS 
+
+Work of DBA 
+User management with permissions 
+back up of DB 
+maintainance - version upgrade 
+
+Automatic storage increase 
+
+100GB : existing capacity 
+
+1/25th of x + 5 -> 1/25th of 100 + 5 -> 4 + 5 -> 9 GB 
+
+
+REPLICA 
+copy, duplicate, snapshots , clone , images.... 
+
+2 kinds of replica 
+- failover replica  - master Db in zone 'a', standby in zone other than'a' - Disaster recovery 
+- read replica  - can be in same zone /diff 
+
+
+CLONE
+copy of yoru DB at that point in time 
+10 tables and 2 DB at the time of cloning, my clone will have 10 tables and 2db 
+
+Master DB : 11 table, 2DB , Clone db : 10 tb, 2 DB 
+
+created Master, stand by DB  and connected to the DB 
+
+
+CREATE TABLE entries (
+friendName VARCHAR(255), 
+content VARCHAR(255),
+entryID INT NOT NULL AUTO_INCREMENT, PRIMARY KEY(entryID));
+
+ INSERT INTO entries (friendName, content) values ("first friend", "I got here!");
+    INSERT INTO entries (friendName, content) values ("second friend", "Me too!");
+
+
+https://cloud.google.com/sql/docs/postgres/quickstarts
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

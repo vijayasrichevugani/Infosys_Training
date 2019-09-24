@@ -1,0 +1,43 @@
+Google App Engine
+-----------------
+web based PAAS offering from AWS
+ It is ideal for running web based applications, lines of business apps and mobile backends
+Upload your code and it get automatically deployed to App Engine
+No need of provisioning a Cloud Instance, Load balancer, AutoScaler etc. Google take care of all the infrastructure configuration, maintenance, management, scaling etc.
+With built-in services like health checks, load balancing you can deploy and build applications much faster 
+
+Has two Environments 
+	-Standard Environment 
+	-Flexible Environment (in Beta)
+Supports wide variety of Programming languages or you can bring your own runtime Eg: java, python, PHP, Go, NodeJs etc.
+
+
+
+
+
+Works with popular developments tools such as Eclipse, Maven, Git, intellij,Jenkins and Pycharm
+
+
+Let us see how to deploy a simple Application in Google App Engine
+
+Open Google Cloud Shell:
+git clone -b phase0-helloworld https://github.com/GoogleCloudPlatform/appengine-php-guestbook
+
+
+
+cd appengine-php-guestbook
+
+Enter the following command to view your application code:
+>cat helloworld.php
+
+
+Google App Engine uses YAML files to specify a deployment's configuration. app.yaml files contain information about your application, like the runtime environment, URL handlers, and more. Enter the following command to view your configuration file:
+
+>cat app.yaml
+
+Create an application, you can use Cloud Shell to deploy your app. To deploy your app enter the following:
+
+gcloud app deploy
+
+Your app has been deployed. The default URL of your app is a subdomain on appspot.com that starts with your project's ID: 
+<your-project>.appspot.com.

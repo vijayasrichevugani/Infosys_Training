@@ -1,0 +1,78 @@
+
+
+
+gcloud shell:
+
+cd /home/krajeshkandikonda/appengine-php-guestbook
+gcloud app deploy --version Firstversion
+
+ gcloud app browse
+
+vi helloworld.php
+
+gcloud app deploy --version Secondversion
+
+gloud app browse
+
+gcloud app services describe default
+
+gcloud app services set-traffic default --splits firstversion=40 , secomdversion=60 --split-by cookie
+
+for n in {1..10}; do    echo "$n"; curl -s "https://arctic-pad-237204.appspot.com/"; echo -e "\n"; done
+
+for n in {1..10}; do   
+	echo "$n"
+	curl -s "https://arctic-pad-237204.appspot.com/"
+	echo -e "\n"
+done
+
+
+secomdversion
+
+
+
+saurabh-demo-auto-vpc
+saurabh-demo-auto-vpc-09sept2019
+saurabh-demo-auto-vpc-09sept2019-1
+
+
+
+
+
+
+google5083860_student@qwiklabs.net
+
+35.190.119.175
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
