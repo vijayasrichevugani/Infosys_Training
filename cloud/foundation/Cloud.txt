@@ -1,0 +1,52 @@
+#! /bin/bash
+sudo apt-get  update 
+sudo apt-get install -y apache2
+sudo service apache2 restart
+
+echo '<!doctype html><html><body><h1> US-Instance-Group </h1></body></html>' | sudo tee /var/www/html/index.html
+
+
+
+
+--------------
+
+Gcloud cmd:
+
+ >gcloud compute instances list
+
+ >gcloud compute disks list
+
+ > gcloud compute  instances stop instance-24
+
+ >gcloud compute instances delete instance-23
+
+
+create table customers(name varchar(255) , country varchar(255), Id int not null auto_increment,primary key(Id));
+
+insert into customers (name,country) values ("Saurabh","India");
+insert into customers (name,country) values ("Vaibhav","India");
+insert into customers (name,country) values ("Alex","USA");
+
+
+
+
+gcloud sql connect <dbinstance-ID> -u root
+show databases;
+create database testdb;
+show databases;
+use mysql ;
+show tables;
+> exit;
+Bye
+itsbala9701@cloudshell:~ (arctic-pad-237204)$
+
+1  cat /etc/issue
+    2  apt-get update 
+    3  clear
+    4  apt-get update 
+    5  apt-get install mysql-client -y
+    6  clear
+    7  history
+    8  mysql  -u root -h 35.200.241.17 -p
+
+
